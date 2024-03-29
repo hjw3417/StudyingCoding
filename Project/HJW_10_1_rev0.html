@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>가치하기 방 만들기</title>
+        <link rel="stylesheet" href="logo.css">
+    </head>
+    <script>
+        /*로고를 누르면 1페이지로 이동*/
+        function home(){
+            window.location.href = "1.html";
+        }
+
+        function menuBtn() {
+            window.location.href = "HJW_10_rev0.html"
+        }
+        /*로고를 누르면 1페이지로 이동*/
+
+        // 주제 직접입력하기
+        function showInputField() {
+        var select = document.getElementById("selectSub");
+        var inputField = document.getElementById("inputField");
+        var selectSubMention = document.getElementById("selectSubMention");
+        var selectSub = document.getElementById("selectSub")
+        
+        if (select.value === "directInput") {
+            inputField.style.display = "block";
+            selectSubMention.style.marginBottom = "100px";
+            selectSub.style.marginBottom = "10px";
+        } else {
+            inputField.style.display = "none";
+            selectSubMention.style.marginBottom = "25px";
+            selectSub.style.marginBottom = "0px";
+        }
+        }
+        //
+
+        function uploadBtn() {
+            window.location.href = "HJW_11_1_rev0.html"
+        }
+
+    </script>
+
+    <style>
+
+        .allInputContainer {
+            width: 1500px;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            margin-top: 150px;
+            margin-left: 100px;
+            text-align: left;
+            padding-bottom: 100px;
+        }
+        
+        
+
+        .leftContainer div {
+            margin-bottom: 25px;
+            font-size: 19pt;
+        }
+
+        .rightContainer div {
+            margin-bottom: 23px;
+        }
+        .rightContainer .element {
+            width: 500px;
+            height: 35px;
+            margin-right: 800px;
+            border: 1pt solid rgb(246, 192, 158);
+        }
+
+        .selectRegion {
+            width: 100px;
+        }
+
+
+        .writeInfo {
+            width: 910px;
+            height: 400px;
+            margin-left: 40px;
+            font-size: 20px;
+            resize: none;
+            border: 1pt solid rgb(246, 192, 158);
+
+        }
+
+        .BtnContainer {
+            display: flex;
+            position: relative;
+            bottom: 60px;
+            right: -760px;
+            
+        } 
+        .BtnContainer button {
+            width: 90px;
+            height: 50px;
+            font-size: 12pt;
+            margin: 5px;
+            border: 1pt solid rgb(246, 192, 158);
+            background-color: bisque;
+        }
+        
+
+    </style>
+    
+
+    <body>
+
+        <!-- 로고랑 메뉴 시작 -->
+        <input type="button" onclick="home()" class="logo">
+        <table class="menutb">
+        <tr>
+            <td>
+                <div class="dropdown">
+                <input type="button" class="menuBtn" value="체험하기">
+                
+            <div class="dropdown-content">
+                <a href="#">원데이클래스</a>
+                <a href="#">어린이체험</a>
+                <a href="#">액티비티</a>
+                
+            </div>
+            </td>
+            <td>
+                <input onclick="menuBtn()" type="button" class="menuBtn" id="menuBtn" value="가치하기">
+            </td>
+        </tr>
+        </table>
+        <!-- 로고랑 메뉴 끝! -->
+
+        <div class="head" id="head">가치하기 방만들기</div>
+
+        <div></div>
+
+        <div class="allInputContainer">
+        
+            <div class="leftContainer">
+                <div class="inputTitleMention">방 제목을 작성해 주세요 : </div>
+                <div class="selectSubMention" id="selectSubMention">주제를 정해주세요 : </div>
+                
+                <div class="selectRegionMention">지역을 선택해주세요 : </div>
+                <div class="selectAdressMention">상세 주소를 입력해주세요 : 
+                    
+                </div>
+                <div class="selectDateMention">약속 일시를 정해주세요 : </div>
+                <div class="expectBuget">예상 소요 금액을 입력해주세요 : </div>
+                <div class="writeUrl">활동 신청 링크 : </div>
+                <div class="writeInfoMention">추가 안내 사항을 입력해주세요.<br></div>
+
+            </div>
+
+            <div class="rightContainer">
+                <div>
+                    <input type="text" class="element inputTitle">
+                </div>
+                
+                <div>
+                    <select class="element selectSub" id="selectSub" onchange="showInputField()">
+                        <option>맛집탐방하기</option>
+                        <option>산책하기</option>
+                        <option>반려동물 동호회</option>
+                        <option>액티비티 체험하기</option>
+                        <option>체험하기</option>
+                        <option>공부히기</option>
+                        <option value="directInput">직접입력</option>
+                    </select>
+                    <div class="inputField" id="inputField" style="display:none;" style="margin-bottom: 2px;">
+                        주제를 직접 입력해주세요 : <input type="text" class="element textInput" id="element textInput">
+                    </div>
+                </div>
+                
+                <div>
+                    <select class="element selectRegion">
+                        <option>서울</option>
+                        <option>경기</option>
+                        <option>충청</option>
+                        <option>강원</option>
+                        <option>호남</option>
+                        <option>영남</option>
+                        <option>제주</option>
+                    </select>
+                </div>
+
+                <div>
+                    <input type="text" class="element inputAdress">
+                </div>
+                
+                <div>
+                    <input type="datetime-local" class="element selectDate">
+                </div>
+                <div>
+                    <input type="text" class="element inputExpectBuget">
+                </div>
+                <div>
+                    <input type="text" class="element inputUrl">
+                </div>
+
+            </div>
+            <div>
+                <textarea name="writeInfo" id="writeInfo" class="writeInfo" cols="40" rows="10"></textarea>
+            </div>
+
+
+        </div>
+       
+            <div class="BtnContainer">
+                <div><button class="editBtn">편집하기</button></div>
+                <div><button class="saveBtn">임시저장</button></div>
+                <div><button onclick="uploadBtn()" class="uploadBtn" id="uploadBtn">방 만들기</button></div>
+            </div>
+        
+        
+
+
+    </body>
+</html>

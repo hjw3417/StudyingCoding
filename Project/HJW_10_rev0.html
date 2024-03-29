@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>가치하기 목록</title>
+        <link rel="stylesheet" href="logo.css">
+        <style>
+            
+            .optionTable {
+                float: right;
+                margin-top: 20px;
+                margin-bottom: 40px;
+                border-radius: 50px;
+                width: 350px;
+                height: 50px;
+                margin-right: 30px;
+            }
+
+            .optionTable select {
+                border-radius: 50px;
+                padding: 7px; /* 안쪽 여백 지정 */
+                font-size: 16px;
+
+            }
+
+            .joinRoomTable {
+                width: 90%;
+                height: 10px;
+                text-align: center;
+                margin-left: 60px;
+                margin-top: 15px;
+                margin-bottom: 10px;
+                padding: 8px;
+                border: 2pt solid rgb(246, 192, 158);
+            }
+
+            .profileContainerTd {
+                width: 0px;
+                
+            }
+            
+            .infoContainerTd {
+                width: 800px;
+                text-align: left;
+                font-size: 14pt;
+            }
+
+            .enterRoomBtn {
+                background-color: bisque;
+                width: 150px;
+                height: 100px;
+                border-radius: 50px;
+                font-size: 12pt;
+                font-weight: bold;
+
+            }
+            
+
+            .makeRoomBtnContainer {
+                position: fixed;
+                bottom: 20px;
+                right: 130px;
+            }
+            .profileContainer {
+                width: 150px;
+                margin-left: 20px;
+            }
+            .profileImg {
+                background-image: url("gom.png");
+                background-size: cover;
+                background-position: center;
+                border-radius: 50px;
+                width: 100px;
+                height: 100px;
+            }
+            .nickName {
+                background-color: bisque;
+                width: 80px;
+                position: relative;
+                top: 2px;
+                left: 11px;
+            }
+
+            .makeRoomBtn {
+                background-color: rgb(246, 192, 158);
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+                font-size: 16pt;
+                font-weight: bold;
+                color: white;
+                border: none;
+            }
+           
+
+
+        </style>
+        <script>
+            /*로고를 누르면 1페이지로 이동*/
+        function home(){
+            window.location.href = "1.html";
+        }
+        function menuBtn() {
+            window.location.href = "HJW_10_rev0.html"
+        }
+            /*로고를 누르면 1페이지로 이동*/
+        function makeRoomBtn() {
+            window.location.href = "HJW_10_1_rev0.html";
+        }
+
+        function enterRoomBtn() {
+            window.location.href = "HJW_11_1_rev0.html";
+        }
+        </script>
+
+    </head>
+    
+    <body>
+            <!-- 로고랑 메뉴 시작 -->
+            <input type="button" onclick="home()" class="logo">
+            <table class="menutb">
+            <tr>
+                <td>
+                    <div class="dropdown">
+                    <input type="button" class="menuBtn" value="체험하기">
+                    
+                <div class="dropdown-content">
+                    <a href="#">원데이클래스</a>
+                    <a href="#">어린이체험</a>
+                    <a href="#">액티비티</a>
+                    
+                </div>
+                </td>
+                <td>
+                    <input  onclick="menuBtn()" type="button" class="menuBtn" id="menuBtn" value="가치하기">
+                </td>
+            </tr>
+            </table>
+            <!-- 로고랑 메뉴 끝! -->
+  
+
+
+
+        <div class="head" id="head">가치하기 목록</div>
+        
+            <table class="optionTable" id="optionTable">
+                <tr>
+                    <td>
+                        <select>
+                            <option value="option1">광역지역선택</option>
+                            <option value="option2">옵션 2</option>
+                            <option value="option3">옵션 3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="option1">기초지역선택</option>
+                            <option value="option2">옵션 2</option>
+                            <option value="option3">옵션 3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="option1">활동주제</option>
+                            <option value="option2">옵션 2</option>
+                            <option value="option3">옵션 3</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="makeRoomBtnContainer" id="makeRoomBtnContainer">
+            <button onclick="makeRoomBtn()" class="makeRoomBtn" id="makeRoomBtn">참여방 만들기</button>
+        </div>
+
+        <div class="joinRoomTableContainer">
+            <table class="joinRoomTable">
+                <tr>
+                    <td class="profileContainerTd">
+                        <div class="profileContainer">
+                            <div class="profileImg"></div>
+                            <div class="nickName">곰</div>
+                        </div>
+                    </td>
+                    <td class="infoContainerTd">
+                        <ul>
+                            <li>지역 : 천안</li>
+                            <li>방제목 : 광덕산에 버섯 따러 가실 분~~~
+                            <li>참여인원 : 3명</li>
+                            <li>소개 : 심마니 경력 20년 이상 2인 대기 중입니다! 맘편히 오세요</li>
+                        </ul>
+                    </td>
+                        
+                    <td class="enterContainerTd">
+                        <div>
+                            <button  onclick="enterRoomBtn()" class="enterRoomBtn" id="enterRoomBtn">둘러보기</button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
+        </div>
+
+        <div class="joinRoomTableContainer">
+            <table class="joinRoomTable">
+                <tr>
+                    <td class="profileContainerTd">
+                        <div class="profileContainer">
+                            <div class="profileImg"></div>
+                            <div class="nickName">곰</div>
+                        </div>
+                    </td>
+                    <td class="infoContainerTd">
+                        <ul>
+                            <li>지역 : 천안</li>
+                            <li>방제목 : 광덕산에 버섯 따러 가실 분~~~
+                            <li>참여인원 : 3명</li>
+                            <li>소개 : 심마니 경력 20년 이상 2인 대기 중입니다! 맘편히 오세요</li>
+                        </ul>
+                    </td>
+                        
+                    <td class="enterContainerTd">
+                        <div>
+                            <button onclick="enterRoomBtn()" class="enterRoomBtn" id="enterRoomBtn">둘러보기</button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
+        </div>
+
+        <div class="joinRoomTableContainer">
+            <table class="joinRoomTable">
+                <tr>
+                    <td class="profileContainerTd">
+                        <div class="profileContainer">
+                            <div class="profileImg"></div>
+                            <div class="nickName">곰</div>
+                        </div>
+                    </td>
+                    <td class="infoContainerTd">
+                        <ul>
+                            <li>지역 : 천안</li>
+                            <li>방제목 : 광덕산에 버섯 따러 가실 분~~~
+                            <li>참여인원 : 3명</li>
+                            <li>소개 : 심마니 경력 20년 이상 2인 대기 중입니다! 맘편히 오세요</li>
+                        </ul>
+                    </td>
+                        
+                    <td class="enterContainerTd">
+                        <div>
+                            <button onclick="enterRoomBtn()" class="enterRoomBtn" id="enterRoomBtn">둘러보기</button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
+        </div>
+
+        <div class="joinRoomTableContainer">
+            <table class="joinRoomTable">
+                <tr>
+                    <td class="profileContainerTd">
+                        <div class="profileContainer">
+                            <div class="profileImg"></div>
+                            <div class="nickName">곰</div>
+                        </div>
+                    </td>
+                    <td class="infoContainerTd">
+                        <ul>
+                            <li>지역 : 천안</li>
+                            <li>방제목 : 광덕산에 버섯 따러 가실 분~~~
+                            <li>참여인원 : 3명</li>
+                            <li>소개 : 심마니 경력 20년 이상 2인 대기 중입니다! 맘편히 오세요</li>
+                        </ul>
+                    </td>
+                        
+                    <td class="enterContainerTd">
+                        <div>
+                            <button onclick="enterRoomBtn()" class="enterRoomBtn" id="enterRoomBtn">둘러보기</button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
+        </div>
+
+        <div class="joinRoomTableContainer">
+            <table class="joinRoomTable">
+                <tr>
+                    <td class="profileContainerTd">
+                        <div class="profileContainer">
+                            <div class="profileImg"></div>
+                            <div class="nickName">곰</div>
+                        </div>
+                    </td>
+                    <td class="infoContainerTd">
+                        <ul>
+                            <li>지역 : 천안</li>
+                            <li>방제목 : 광덕산에 버섯 따러 가실 분~~~
+                            <li>참여인원 : 3명</li>
+                            <li>소개 : 심마니 경력 20년 이상 2인 대기 중입니다! 맘편히 오세요</li>
+                        </ul>
+                    </td>
+                        
+                    <td class="enterContainerTd">
+                        <div>
+                            <button onclick="enterRoomBtn()" class="enterRoomBtn" id="enterRoomBtn">둘러보기</button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
+        </div>
+
+        <div class="joinRoomTableContainer">
+            <table class="joinRoomTable">
+                <tr>
+                    <td class="profileContainerTd">
+                        <div class="profileContainer">
+                            <div class="profileImg"></div>
+                            <div class="nickName">곰</div>
+                            <div class="nickName">곰</div>
+                        </div>
+                    </td>
+                    <td class="infoContainerTd">
+                        <ul>
+                            <li>지역 : 천안</li>
+                            <li>방제목 : 광덕산에 버섯 따러 가실 분~~~
+                            <li>참여인원 : 3명</li>
+                            <li>소개 : 심마니 경력 20년 이상 2인 대기 중입니다! 맘편히 오세요</li>
+                        </ul>
+                    </td>
+                        
+                    <td class="enterContainerTd">
+                        <div>
+                            <button onclick="enterRoomBtn()" class="enterRoomBtn" id="enterRoomBtn">둘러보기</button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
+        </div>
+
+        <div class="joinRoomTableContainer">
+            <table class="joinRoomTable">
+                <tr>
+                    <td class="profileContainerTd">
+                        <div class="profileContainer">
+                            <div class="profileImg"></div>
+                            <div class="nickName">곰</div>
+                        </div>
+                    </td>
+                    <td class="infoContainerTd">
+                        <ul>
+                            <li>지역 : 천안</li>
+                            <li>방제목 : 광덕산에 버섯 따러 가실 분~~~
+                            <li>참여인원 : 3명</li>
+                            <li>소개 : 심마니 경력 20년 이상 2인 대기 중입니다! 맘편히 오세요</li>
+                        </ul>
+                    </td>
+                        
+                    <td class="enterContainerTd">
+                        <div>
+                            <button onclick="enterRoomBtn()" class="enterRoomBtn" id="enterRoomBtn">둘러보기</button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
+        </div>
+
+        <div class="joinRoomTableContainer">
+            <table class="joinRoomTable">
+                <tr>
+                    <td class="profileContainerTd">
+                        <div class="profileContainer">
+                            <div class="profileImg"></div>
+                            <div class="nickName">곰</div>
+                        </div>
+                    </td>
+                    <td class="infoContainerTd">
+                        <ul>
+                            <li>지역 : 천안</li>
+                            <li>방제목 : 광덕산에 버섯 따러 가실 분~~~
+                            <li>참여인원 : 3명</li>
+                            <li>소개 : 심마니 경력 20년 이상 2인 대기 중입니다! 맘편히 오세요</li>
+                        </ul>
+                    </td>
+                        
+                    <td class="enterContainerTd">
+                        <div>
+                            <button onclick="enterRoomBtn()" class="enterRoomBtn" id="enterRoomBtn">둘러보기</button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
+        </div>
+      
+
+                
+
+           
+
+          
+
+
+            
+                
+
+       
+
+
+             
+    </body>
+
+</html>
