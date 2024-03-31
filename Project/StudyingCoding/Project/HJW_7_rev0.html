@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>결제창</title>
+        <link rel="stylesheet" href="logo.css">
+        <script>
+           /*로고를 누르면 1페이지로 이동*/
+           function home(){
+            window.location.href = "1.html";
+            }
+            /*로고를 누르면 1페이지로 이동*/
+
+            
+            function menuBtn() {
+            window.location.href = "HJW_10_rev0.html";
+            }
+
+            function goToRoom() {
+                window.location.href = "HJW_11_1_rev0.html";
+            }
+        </script>
+    </head>
+    <body>
+
+        <!-- 로고랑 메뉴 시작 -->
+        <input type="button" onclick="home()" class="logo">
+        <table class="menutb">
+        <tr>
+            <td>
+                <div class="dropdown">
+                <input type="button" class="menuBtn" value="체험하기">
+                
+            <div class="dropdown-content">
+                <a href="#">원데이클래스</a>
+                <a href="#">어린이체험</a>
+                <a href="#">액티비티</a>
+                
+            </div>
+            </td>
+            <td>
+                <input  onclick="menuBtn()" type="button" class="menuBtn" id="menuBtn" value="가치하기">
+            </td>
+        </tr>
+        </table>
+        <!-- 로고랑 메뉴 끝! -->
+
+        <div class="head">결제창</div>
+        <div class="paymentInfoContainer">
+            
+        </div>
+
+    </body>
+</html>

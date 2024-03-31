@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>채팅 방</title>
+        <link rel="stylesheet" href="logo.css">
+        <script>
+            /*로고를 누르면 1페이지로 이동*/
+            function home(){
+            window.location.href = "1.html";
+            }
+            /*로고를 누르면 1페이지로 이동*/
+
+            
+            function menuBtn() {
+            window.location.href = "HJW_10_rev0.html";
+            }
+
+            function goToRoom() {
+                window.location.href = "HJW_11_1_rev0.html";
+            }
+            
+
+            //채팅
+            var nickNameIs = "왕발곰";
+            var profileUrl = "gom.png";
+            var comments = [];
+
+            function submitComment() {
+                var commentInput = document.getElementById("inputComment");
+                var comment = commentInput.value;
+                var commentArea = document.getElementById("commentArea");
+
+                // 새로운 댓글을 생성하여 채팅창에 추가
+                var newComment = document.createElement("div");
+                newComment.classList.add("commentView");
+
+                // 이미지 엘리먼트 생성
+                var profilImage = document.createElement("img");
+                profilImage.src = profileUrl; 
+
+                // 프로필 모양 타원 설정
+                profilImage.style.width = "40px";
+                profilImage.style.height = "40px";
+                profilImage.style.borderRadius = "40px";
+
+                // 닉네임 엘리먼트 설정
+                var nickName = document.createElement("div");
+                nickName.classList.add("info");
+                var nickNameText = document.createElement("div");
+                nickNameText.classList.add("nickNameIs"); 
+                nickNameText.textContent = nickNameIs;
+                nickName.appendChild(nickNameText);
+
+                // 메시지 엘리먼트 생성
+                var messageElement = document.createElement("div");
+                messageElement.classList.add("commentContent");
+                messageElement.textContent = " : " + comment;
+
+                //액션 엘리먼트 생성
+                var actions = document.createElement("div");
+                actions.classList.add("actions");
+                var deleteBtn = document.createElement("button");
+                deleteBtn.classList.add("deleteBtn");
+                deleteBtn.textContent = "삭제";
+                deleteBtn.onclick = function() {
+                    var index = comments.indexOf(newComment);
+                    if (index !== -1) {
+                        comments.splice(index, 1);
+                        newComment.remove();
+                    }
+                };
+
+                actions.appendChild(deleteBtn);
+
+                // 새로운 댓글 엘리먼트에 이미지와 닉네임, 메시지 추가
+                newComment.appendChild(profilImage);
+                newComment.appendChild(nickName);
+                newComment.appendChild(messageElement);
+                newComment.appendChild(actions);
+
+
+                // 채팅 영역에 새로운 댓글 추가
+                commentArea.appendChild(newComment);
+                
+                //댓글을 배열에 추가
+                comments.push(newComment);
+
+                // 입력창 비우기
+                commentInput.value = "";
+
+                // 채팅창을 가장 하단으로 스크롤
+                commentArea.scrollTop = commentArea.scrollHeight;
+            }
+
+        </script>
+
+        <style>
+            .backBtn {
+                float: right;
+                border: none;
+                background-color: rgb(246, 192, 158);
+                width: 120px;
+                height: 50px;
+                color: white;
+                font-size: 10pt;
+                font-weight: bold;
+                margin-left: 10px;
+                line-height: 50px;
+                margin-top: 10px;
+                margin-bottom: 50px;
+            }
+
+            .exitBtn {
+                float: right;
+                border: none;
+                background-color: rgb(246, 192, 158);
+                width: 120px;
+                height: 50px;
+                color: white;
+                font-size: 10pt;
+                font-weight: bold;
+                margin-left: 10px;
+                line-height: 50px;
+                margin-top: 10px;
+                margin-bottom: 50px;
+            }
+
+            .participantsDropdown{
+                position: relative;
+                display: inline-block;
+                float: right;
+                border: none;
+                background-color: rgb(246, 192, 158);
+                width: 120px;
+                height: 50px;
+                color: white;
+                font-size: 10pt;
+                font-weight: bold;
+                line-height: 50px;
+                margin-top: 10px;
+                margin-bottom: 50px;
+            }
+            .participantsList {
+                display: none;
+                position: absolute;
+                color: white;
+                background-color: bisque;
+                width: 120px;
+
+            }
+
+            .participantsList li {
+                line-height: 20pt;
+                font-size: 15pt;
+                list-style: none;
+                margin-left: -40px;
+            }
+
+
+
+            .participantsDropdown:hover .participantsList {display: block;}       
+
+
+            .headContainer {
+                margin-bottom: 80px;
+            }
+            .chattingZone {
+                width: 1100px;
+                height: 600px;
+                border: 1pt solid rgb(246, 192, 158);
+                margin-top: 100px;
+                margin-left: 50px;
+            }
+
+            
+
+            .commentArea {
+            width: 1100px;
+            height: 600px;
+            margin-top: 80px;
+            margin-left: 40px;
+            border: 2pt solid rgb(246, 192, 158);
+            line-height: 40px;
+            padding: 15px;
+            text-align: left;
+            overflow-y: auto;
+
+            }
+            
+
+            .inputCommentContainer {
+                display: flex;
+                
+            }
+            .inputComment {
+                width: 1060px;
+                height: 30px;
+                margin-left: 40px;
+                text-align: left;
+                border: 2pt solid rgb(246, 192, 158);
+                line-height: 28px;
+            }
+
+            .submitComment {
+                width: 65px;
+                height: 35px;
+                border: 2pt solid rgb(246, 192, 158);
+                background-color: bisque;
+            }
+
+            .joinRoom {
+                width: 90px;
+                height: 50px;
+                font-size: 12pt;
+                margin-right: -860px;
+                margin-top: 20px;
+                border: 1pt solid rgb(246, 192, 158);
+                background-color: bisque;
+            }
+
+            .commentView {
+                display: flex;
+                margin-bottom: 10px;
+                border: 1pt solid rgb(246, 192, 158);
+                padding: 5px;
+                position: relative;
+            }
+
+            .commentView .info {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .commentView .info .nickNameIs {
+                font-weight: bold;
+                position: relative;
+                left: 8px;
+            }
+            
+            .commentView .commentContent {
+                position: relative;
+                left: 12px;
+                width: 690px;
+            }
+        
+            .actions {
+                position: absolute; 
+                right: 10px;          
+            }
+            .deleteBtn {
+                background-color: rgb(246, 192, 158);
+                width: 80px;
+                border: 0pt;
+            }
+
+
+            
+        </style>
+
+    </head>
+    <body>
+        <!-- 로고랑 메뉴 시작 -->
+        <input type="button" onclick="home()" class="logo">
+        <table class="menutb">
+        <tr>
+            <td>
+                <div class="dropdown">
+                <input type="button" class="menuBtn" value="체험하기">
+                
+            <div class="dropdown-content">
+                <a href="#">원데이클래스</a>
+                <a href="#">어린이체험</a>
+                <a href="#">액티비티</a>
+                
+            </div>
+            </td>
+            <td>
+                <input  onclick="menuBtn()" type="button" class="menuBtn" id="menuBtn" value="가치하기">
+            </td>
+        </tr>
+        </table>
+        <!-- 로고랑 메뉴 끝! -->
+
+        <div class="headContainer">
+        <div class="head" id="head">채팅방</div>
+        <div onclick="goToRoom()" class="backBtn" id="backBtn">참여방으로 이동</div>
+        <div class="exitBtn" id="exitBtn">채팅방 나가기</div>
+        <div class="participantsDropdown">
+            <div>참여 중인 인원</div>   
+            <div class="participantsList">
+                <ol>
+                    <li>왕발곰</li>
+                    <li>오솔희</li>
+                </ol>
+                
+            </div>
+        </div>
+
+        <div class="commentArea" id="commentArea"></div>
+        <div class="inputCommentContainer">
+            <div><input type="text" class="inputComment" id="inputComment"></div>
+            <div><button onclick="submitComment()" class="submitComment" id="submitComment">입력</button></div>
+        </div>
+
+    </body>
+</html>

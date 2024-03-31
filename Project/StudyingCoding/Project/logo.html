@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        /* 로고랑 메뉴 시작 */
+        :root{
+            background-color: rgb(246, 192, 158);
+        }
+        body{
+            width: 1200px;  
+            margin: auto;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .logo{
+            width: 690px;
+            height: 335px;
+            border: none;
+            background-image: url('logo.png');
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .menutb{
+            width: 600px;
+            /* border: 1px solid black; */
+            border: none;
+            margin: auto;
+        }
+        .menuBtn{
+            border: none;
+            border-radius: 50px;
+            background-color: rgb(246, 192, 158);
+            width: 300px;
+            height: 50px;
+            cursor: pointer;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .dropdown{
+            position: relative;
+			display: inline-block;
+        }
+        .dropdown-content {
+			display: none;
+			position: absolute;
+        }
+        .dropdown-content a {
+            background-color: rgb(246, 192, 158);
+			padding: 8px;
+			text-decoration: none;
+			border-radius: 50px;
+            color: white;
+            margin-top: 30px;
+		}
+        .dropdown:hover .dropdown-content { display: block; }
+        /* 로고랑 메뉴 끝 */
+
+
+
+
+
+
+    </style>
+<script>
+    /*로고를 누르면 1페이지로 이동*/
+function home(){
+    window.location.href = "1.html";
+}
+    /*로고를 누르면 1페이지로 이동*/
+
+
+</script>
+
+
+
+</head>
+
+<body>
+    <!-- 로고랑 메뉴 시작 -->
+   <input type="button" onclick="home" class="logo">
+   <table class="menutb">
+    <tr>
+        <td>
+            <div class="dropdown">
+            <input type="button" class="menuBtn" value="체험하기">
+            
+		<div class="dropdown-content">
+			<a href="#">원데이클래스</a>
+			<a href="#">어린이체험</a>
+			<a href="#">액티비티</a>
+			
+        </div>
+        </td>
+        <td>
+            <input type="button" class="menuBtn" value="가치하기">
+        </td>
+    </tr>
+   </table>
+   <!-- 로고랑 메뉴 끝! -->
+    
+    
+</body>
+</html>
